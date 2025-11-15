@@ -148,3 +148,11 @@ Thumbs.db
 # Checkpoints directory
 ckpts/
 
+# Data directories
+data/bench2drive/
+data/Bench2Drive-mini/
+data/infos/
+
+# Chat logs / exports
+chat-B2D/
+chat-B2D.zip
