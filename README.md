@@ -54,7 +54,7 @@ git clone https://github.com/xiaomi-mlab/Orion.git
 cd ./ORION
 conda create -n orion python=3.8 -y
 conda activate orion
-pip install torch==2.4.1+cu118 torchvision==0.19.1+cu118 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu118
+pip install torch==2.4.1+cu121 torchvision==0.19.1+cu121 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
 pip install -v -e .
 pip install -r requirements.txt
 
@@ -68,6 +68,17 @@ ORION uses the pretrained [2D llm weights](https://huggingface.co/exiawsh/pretra
 cd /path/to/ORION
 mkdir ckpts
 ```
+
+Download the 2D LLM weights:
+```
+huggingface-cli download exiawsh/pretrain_qformer --local-dir ckpts/pretrain_qformer --local-dir-use-symlinks False
+```
+
+Download the vision encoder + projector weights:
+```
+wget https://github.com/NVlabs/OmniDrive/releases/download/v1.0/eva02_petr_proj.pth -O ckpts/eva02_petr_proj.pth
+```
+
 The vision encoder + projector weights are extracted from ckpts/pretrain_qformer/, which is pretrained by using llava data.
 
 To help reproduce the results of ORION, our Chat-B2D dataset are provided at [here](https://huggingface.co/datasets/poleyzdk/Chat-B2D/tree/main).

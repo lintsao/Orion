@@ -150,7 +150,7 @@ ckpts/
 
 # Data directories
 data/bench2drive/
-data/Bench2Drive-mini/
+data/bench2drive-mini/
 data/infos/
 
 # Chat logs / exports
